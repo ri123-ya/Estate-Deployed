@@ -98,9 +98,10 @@ const server = app.listen(process.env.PORT, () => {
 // Now, we attach Socket.IO to this same server object
 const io = new Server(server, {
   cors: {
-    origin: process.env.CLIENT_URL,  // Allow the client URL
-    methods: ["GET", "POST"],        // Allow GET and POST methods for Socket.IO
-    credentials: true                // Allow credentials like cookies
+    origin: [process.env.CLIENT_URL], // wrap in array
+    methods: ["GET", "POST"],
+    allowedHeaders: ["*"],
+    credentials: true
   }
 });
 
