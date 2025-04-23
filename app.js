@@ -1,4 +1,4 @@
-import { Server } from "socket.io";
+// import { Server } from "socket.io";
 import express from "express";
 import cors from "cors";
 import cookieParser from "cookie-parser";
@@ -36,22 +36,26 @@ app.listen(PORT, () => {
 });
 
 
-const io = new Server(server, {
-  cors: {
-    origin: process.env.CLIENT_URL,  // Allow the client URL
-    methods: ["GET", "POST"],        // Allowed HTTP methods
-    credentials: true                // Allow credentials like cookies
-  }
-});
+// const io = new Server(server, {
+//   cors: {
+//     origin: process.env.CLIENT_URL,  // Allow the client URL
+//     methods: ["GET", "POST"],        // Allow GET and POST methods for Socket.IO
+//     credentials: true                // Allow credentials like cookies
+//   }
+// });
 
-// Socket.IO connection handler
-io.on("connection", (socket) => {
-  console.log("A user connected");
-  // Your socket events go here
-  socket.on("disconnect", () => {
-    console.log("A user disconnected");
-  });
-});
+// // Socket.IO connection handler
+// io.on("connection", (socket) => {
+//   console.log("A user connected");
+//   // Your socket events go here
+//   socket.on("disconnect", () => {
+//     console.log("A user disconnected");
+//   });
+// });
+
+
+
+
 // app.listen(8800, () => {
 //   console.log("Server is running!");
 // });
