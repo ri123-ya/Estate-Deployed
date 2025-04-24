@@ -20,7 +20,7 @@ const app = express();
 //      credentials: true 
 //   }));
 const corsOptions = {
-  origin: "process.env.CLIENT_URL", // Frontend URL
+  origin: process.env.CLIENT_URL, // Frontend URL
   credentials: true, // Allow cookies
   methods: ["GET", "POST", "PUT", "DELETE"], // Specify allowed HTTP methods
   allowedHeaders: ["Content-Type", "Authorization"], // Specify allowed headers
